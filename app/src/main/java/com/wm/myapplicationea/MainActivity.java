@@ -15,12 +15,15 @@ import android.widget.Toast;
 import com.wm.myapplicationea.dto.LoginDto;
 
 public class MainActivity extends AppCompatActivity {
-
+    private LoginDto loginDto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        EditText login = (EditText) findViewById(R.id.editTextTextPersonName2);
+        EditText pwd = (EditText) findViewById(R.id.editTextTextPersonName4);
 
         Button okBut = (Button) findViewById(R.id.button);
         Button regBut = (Button) findViewById(R.id.button2);
@@ -33,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
         okBut.setOnClickListener(but -> {
             Bundle arguments = getIntent().getExtras();
             if (arguments != null) {
-                LoginDto LoginDto = arguments.get(LOGIN));
-                String password = arguments.get("password").toString();
+                loginDto = (LoginDto) arguments.get(LOGIN);
                 Toast.makeText(this, loginDto.getLogin(), Toast.LENGTH_SHORT).show();
+            }
+            if (loginDto != null && (!loginDto.getLogin().equals(login.getText().toString()) || !loginDto.getHaslo().equals(pwd.getText().toString()))){
+                Toast.makeText(this, "Login lub hasło podany niepoprawnie", Toast.LENGTH_SHORT).show();
             }
         });
 

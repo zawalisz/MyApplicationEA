@@ -9,7 +9,7 @@ public class RegistrationDto implements Serializable {
     public RegistrationDto(String login, String haslo, String haslo2) {
         this.login = login;
         this.haslo = haslo;
-        this.haslo2 = haslo2
+        this.haslo2 = haslo2;
     }
 
     public String getLogin() { return login; }
