@@ -1,5 +1,7 @@
 package com.wm.myapplicationea;
 
+import static com.wm.myapplicationea.utils.Constants.LOGIN;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -9,6 +11,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.wm.myapplicationea.dto.LoginDto;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         okBut.setOnClickListener(but -> {
             Bundle arguments = getIntent().getExtras();
             if (arguments != null) {
-                String login = arguments.get("login").toString();
+                LoginDto LoginDto = arguments.get(LOGIN));
                 String password = arguments.get("password").toString();
-                Toast.makeText(this, login, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, loginDto.getLogin(), Toast.LENGTH_SHORT).show();
             }
         });
 
