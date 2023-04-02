@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,7 +61,26 @@ public class RegestrationActivity extends AppCompatActivity {
             }
         });
 
-        pwd2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        //pwd2.addTextChangedListener(new TextWatcher()
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        };
+
+        /*
+        {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 boolean isPwd2Empty = pwd2.getText().toString().isEmpty();
@@ -80,9 +101,15 @@ public class RegestrationActivity extends AppCompatActivity {
                     }
                 }
             }
+
         });
+        */
+        login.addTextChangedListener(textWatcher);
+        pwd.addTextChangedListener(textWatcher);
+        pwd2.addTextChangedListener(textWatcher);
 
         registrationBut.setOnClickListener(view -> {
+            reg = new RegistrationDto(login.getText().toString(), pwd.getText().toString(), pwd2.getText().toString());
             //String loginValue = login.getText().toString();
             //String pwdValue = pwd.getText().toString();
             //String pwd2Value = pwd2.getText().toString();
@@ -109,12 +136,7 @@ public class RegestrationActivity extends AppCompatActivity {
             }
         });
     }
-/*
-    String registrationDTO = login.getText().toString();
-    RegistrationDto reg = RegistrationDTO();
-    reg RegistrationDTO().build();
-    reg =
-*/
+
     public void updateComponent(EditText et, String text, int color) {
         et.setHint(text);
         et.setBackgroundColor(color);

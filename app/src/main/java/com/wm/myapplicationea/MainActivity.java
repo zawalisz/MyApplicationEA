@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             }
             if (loginDto != null && (!loginDto.getLogin().equals(login.getText().toString()) || !loginDto.getHaslo().equals(pwd.getText().toString()))){
                 Toast.makeText(this, "Login lub hasło podany niepoprawnie", Toast.LENGTH_SHORT).show();
+            } else  {
+                Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
             }
         });
 
