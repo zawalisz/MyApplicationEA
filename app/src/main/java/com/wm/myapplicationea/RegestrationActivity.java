@@ -61,30 +61,11 @@ public class RegestrationActivity extends AppCompatActivity {
             }
         });
 
-        //pwd2.addTextChangedListener(new TextWatcher()
-        TextWatcher textWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        };
-
-        /*
-        {
+        pwd2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 boolean isPwd2Empty = pwd2.getText().toString().isEmpty();
-                reg = new RegistrationDto(login.getText().toString(), pwd.getText().toString(), pwd2.getText().toString());
+                //reg = new RegistrationDto(login.getText().toString(), pwd.getText().toString(), pwd2.getText().toString());
                 String pwdval = pwd.getText().toString();
                 String pwd2val = pwd2.getText().toString();
                 if (hasFocus){
@@ -103,7 +84,25 @@ public class RegestrationActivity extends AppCompatActivity {
             }
 
         });
-        */
+
+        //pwd2.addTextChangedListener(new TextWatcher()
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        };
+
         login.addTextChangedListener(textWatcher);
         pwd.addTextChangedListener(textWatcher);
         pwd2.addTextChangedListener(textWatcher);
@@ -129,6 +128,12 @@ public class RegestrationActivity extends AppCompatActivity {
                 pwd2.setText("");
                 updateComponent(pwd2, "Powtórzone hasło nie jest identyczne", Color.RED);
             } else if (reg.hasFieldsFilled()) {
+                // ******************************
+                //RegistrationDBService - zrobić!!!
+                //Dodać class RegistrationDBService do RegistrationActivity
+                //Dodać przycisk 'Exit' (wyjście do MainActivity)
+                //Zrobić dodawanie danych do tabeli (addRegistration)
+                // ******************************
                 LoginDto loginDto = new LoginDto(reg.getLogin(), reg.getHaslo());
                 Intent intentRegestration = new Intent(this, MainActivity.class);
                 intentRegestration.putExtra(LOGIN, loginDto);
