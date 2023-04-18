@@ -88,18 +88,18 @@ public class RegestrationActivity extends AppCompatActivity {
         //pwd2.addTextChangedListener(new TextWatcher()
         TextWatcher textWatcher = new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
 
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                reg = new RegistrationDto(login.getText().toString(), pwd.getText().toString(), pwd2.getText().toString());
             }
         };
 

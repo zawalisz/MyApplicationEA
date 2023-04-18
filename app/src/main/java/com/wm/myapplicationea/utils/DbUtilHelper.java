@@ -20,6 +20,10 @@ public class DbUtilHelper extends SQLiteOpenHelper {
 
     }
 
+    public SQLiteDatabase getWriteConnection() {
+        return getWritableDatabase();
+    }
+
     public SQLiteDatabase getReadConnection() {
         return getReadConnection();
     }
