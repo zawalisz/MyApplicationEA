@@ -1,3 +1,5 @@
+import static com.wm.myapplicationea.utils.DbUtilHelper.DB_REGISTRATION_TABLE;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

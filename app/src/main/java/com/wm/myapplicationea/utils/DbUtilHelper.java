@@ -1,5 +1,6 @@
 package com.wm.myapplicationea.utils;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -7,7 +8,7 @@ public class DbUtilHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "tutorial_db";
     private static final String DB_REGISTRATION_TABLE = "registration";
 
-    public DbUtilHelper(Context, context){
+    public DbUtilHelper(Context context){
         super(context, DB_NAME, null, 1);
     }
 
