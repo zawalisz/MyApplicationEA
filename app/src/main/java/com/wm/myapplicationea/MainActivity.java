@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button okBut = (Button) findViewById(R.id.button);
         Button regBut = (Button) findViewById(R.id.button2);
+        Button zamBut = (Button) findViewById(R.id.button4);
 
         regBut.setOnClickListener(view -> {
             Intent intentRegestration = new Intent(this, RegestrationActivity.class);
@@ -43,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Login lub hasło podany niepoprawnie", Toast.LENGTH_SHORT).show();
             } else  {
                 Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        zamBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

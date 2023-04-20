@@ -134,6 +134,7 @@ public class RegestrationActivity extends AppCompatActivity {
                 //Dodać przycisk 'Exit' (wyjście do MainActivity)
                 //Zrobić dodawanie danych do tabeli (addRegistration)
                 // ******************************
+
                 LoginDto loginDto = new LoginDto(reg.getLogin(), reg.getHaslo());
                 Intent intentRegestration = new Intent(this, MainActivity.class);
                 intentRegestration.putExtra(LOGIN, loginDto);
@@ -146,4 +147,5 @@ public class RegestrationActivity extends AppCompatActivity {
         et.setHint(text);
         et.setBackgroundColor(color);
     }
+
 }
